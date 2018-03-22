@@ -1,0 +1,45 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Posts</h3>
+    </div>
+    <div class="box-body no-padding">
+        <div class="col-md-12">
+            <div class="col-md-3 no-padding float-left">Total Posts:
+                <strong>{{(posts | filter : searchText).length}}</strong>
+            </div>
+            <div class="col-md-3 float-left">
+                <input [(ngModel)]="searchText" placeholder="Search Posts">
+            </div>
+            <div class="col-md-6 no-padding float-right text-right">
+                <a [routerLink]="['/posts/add']">Add New Post</a>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>UserId</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Edit</th>
+                    <td>Delete</td>
+                </tr>
+                <tr *ngFor="let post of posts | filter : searchText">
+                    <td>{{post.id}}</td>
+                    <td>
+                        {{post.userId}}
+                    </td>
+                    <td>{{post.title}}</td>
+                    <td>{{post.body}}</td>
+                    <td>
+                        <a href="javascript:;" [routerLink]="['/posts/edit/' + post.id]">Edit</a>
+                    </td>
+                    <td>
+                        <a href="javascript:;" (click)="delete(post.id)">Delete</a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

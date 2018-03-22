@@ -1,0 +1,22 @@
+<h2>@Input and @Output</h2>
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Input Component</h3>
+                </div>
+                <input type="text" [(ngModel)]="inputVariable" class="form-control" />
+                
+                <div class="box-header with-border">
+                    <h3 class="box-title">Input From Output Component</h3>
+                </div>
+                {{outputVariable}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <output-component [inputVariable]="inputVariable" (output)="outputEvent($event)"></output-component>
+        </div>
+    </div>
+</div>

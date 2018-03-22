@@ -1,0 +1,33 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">{{postTitle}}</h3>
+            </div>
+            <form class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputPostTitle" class="col-sm-2 control-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" [(ngModel)]="post.title" name="postTitle" class="form-control" id="inputPostTitle" placeholder="Enter Post Title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPostDescription" class="col-sm-2 control-label">Post Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="postBody" id="inputPostDescription" [(ngModel)]="post.body" placeholder="Enter Post Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <a [routerLink]="['/posts']">Cancel</a>
+                    <button type="submit" class="btn btn-info pull-right" (click)="savePost()">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

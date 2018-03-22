@@ -1,0 +1,16 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Output Component</h3>
+    </div>
+    <div class="box-body no-padding">
+        <span class="small">Input From Input Component</span>
+        {{inputVariable}}
+    </div>
+    <div class="box-body no-padding">
+        <div class="box-header">
+            <h3 class="box-title">Send To Input Component</h3>
+        </div>
+        <input type="text" [(ngModel)]="outputVariable" class="form-control">
+        <button (click)="outputEvent()">Output</button>
+    </div>
+</div>
